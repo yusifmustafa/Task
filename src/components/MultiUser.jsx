@@ -22,17 +22,17 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   display: "flex",
+  width: "70%",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",
-  width: "100%",
   bgcolor: "background.paper",
   borderRadius: "10px",
   boxShadow: 24,
   p: 4,
 };
 const StyledTable = styled(Table)`
-  width: 100%;
+  width: 70%;
   margin: 50px 0 0 50px;
 `;
 
@@ -59,10 +59,7 @@ export default function MultiUserForm({
   const sendDataToApi = () => {
     datas.forEach((item) => context.addUser(item));
   };
-  const handleEditData = (id) => {
-    context.getUserById(id);
-    console.log("id", id);
-  };
+
   return (
     <div>
       <Box sx={style}>
@@ -107,13 +104,10 @@ export default function MultiUserForm({
 
                   <TableCell>
                     <Button
-                      onClick={handleEditData(item.id)}
-                      color="primary"
+                      color="secondary"
                       variant="contained"
+                      onClick={context.deleteUser(item.id)}
                     >
-                      Edit
-                    </Button>
-                    <Button color="secondary" variant="contained">
                       Delete
                     </Button>
                   </TableCell>
