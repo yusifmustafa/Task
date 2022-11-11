@@ -1,14 +1,9 @@
-import {
-  AppBar, 
-  CssBaseline, 
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, CssBaseline, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import { useState } from "react";
 import "./Navbar.css";
-
-function Navbar({ handleOpenSingleModal }) {
+ 
+function Navbar({ handleOpenSingleModal, handleOpen }) {
   const [open, setOpen] = useState(false);
 
   const handleOnClick = () => {
@@ -40,7 +35,9 @@ function Navbar({ handleOpenSingleModal }) {
                 >
                   Single
                 </button>
-                <button className="dropdown-item">Multiple</button>
+                <button className="dropdown-item" onClick={handleOpen}>
+                  Multiple
+                </button>
               </div>
             )}
           </div>
