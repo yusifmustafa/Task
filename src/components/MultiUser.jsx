@@ -54,8 +54,7 @@ export default function MultiUserForm({
   openMultiForm,
 }) {
   const context = useContext(UserContext);
-  const datas = context.datas;
-  console.log("dtssdtstss", datas);
+  const datas = context.datas; 
   const sendDataToApi = () => {
     datas.forEach((item) => context.addUser(item));
   };

@@ -2,7 +2,7 @@ import { AppBar, CssBaseline, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import { useState } from "react";
 import "./Navbar.css";
- 
+
 function Navbar({ handleOpenSingleModal, handleOpen }) {
   const [open, setOpen] = useState(false);
 
