@@ -15,6 +15,7 @@ import MultiForm from "../components/MultiForm";
 import { useContext } from "react";
 import { UserContext } from "../Context/UserContextProvider";
 import styled from "@emotion/styled";
+import { toast } from "react-toastify";
 
 const style = {
   position: "absolute",
@@ -48,15 +49,18 @@ const TRow = styled(TableRow)`
   }
 `;
 
+const notifyAlert5 = () => toast.success("Data userListə əlavə olundu!");
+
 export default function MultiUserForm({
   handleOpenMultiForm,
   handleCloseMultiForm,
   openMultiForm,
 }) {
   const context = useContext(UserContext);
-  const datas = context.datas; 
+  const datas = context.datas;
   const sendDataToApi = () => {
     datas.forEach((item) => context.addUser(item));
+    notifyAlert5();
   };
 
   return (
@@ -105,7 +109,7 @@ export default function MultiUserForm({
                     <Button
                       color="secondary"
                       variant="contained"
-                      onClick={context.deleteUser(item.id)}
+                      onClick={() => context.handleDeleteItem(item.id)}
                     >
                       Delete
                     </Button>

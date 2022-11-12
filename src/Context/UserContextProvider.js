@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { v4 } from "uuid";
 import Api from "../utils/Api";
+
 export const UserContext = React.createContext({});
 const URL_SINGLE_USER = "/users/{userId}";
 const URL_USER_LIST = "/users";
@@ -10,11 +11,7 @@ const URL_UPDATE_USER = "/users/{userId}";
 const INITAL_STATE = {
   userList: [],
   user: {},
-  datas: [
-    {
-      id: v4(),
-    },
-  ],
+  datas: [],
   showDialog: false,
 };
 const UserContextProvider = (props) => {
@@ -32,6 +29,7 @@ const UserContextProvider = (props) => {
         openDialog: openDialog,
         closeDialog: closeDialog,
         handleOnChange: handleOnChange,
+        handleDeleteItem: handleDeleteItem,
       }}
     >
       {props.children}
@@ -44,6 +42,13 @@ const UserContextProvider = (props) => {
 
   function closeDialog() {
     setState(Object.assign({}, state, { showDialog: false }));
+  }
+
+  function handleDeleteItem(id) {
+    setState((pre) => ({
+      ...pre,
+      datas: INITAL_STATE.datas.filter((user) => user.id !== id),
+    }));
   }
 
   function handleOnChange(event) {
@@ -76,7 +81,6 @@ const UserContextProvider = (props) => {
     });
   }
 
- 
   function addUser(userData) {
     Api.post(URL_ADD_USER, userData).then(() => {});
     loadUserList();

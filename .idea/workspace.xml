@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fabd1ac4-bd73-44a9-a370-0e2eaded24d7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DataList/DataList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DataList/DataList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MultiForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MultiForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Context/UserContextProvider.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Context/UserContextProvider.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MultiUser.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MultiUser.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar/Navbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/UserForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/UserForm.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +53,7 @@
       <workItem from="1668058646846" duration="827000" />
       <workItem from="1668139515704" duration="13000" />
       <workItem from="1668176444813" duration="16000" />
-      <workItem from="1668237718683" duration="1147000" />
+      <workItem from="1668237718683" duration="5549000" />
     </task>
     <servers />
   </component>
