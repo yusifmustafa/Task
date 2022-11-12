@@ -30,6 +30,8 @@ const UserContextProvider = (props) => {
         closeDialog: closeDialog,
         handleOnChange: handleOnChange,
         handleDeleteItem: handleDeleteItem,
+        openMultiFormDialog: openMultiFormDialog,
+        closeMultiFormDialog: closeMultiFormDialog,
       }}
     >
       {props.children}
@@ -41,6 +43,13 @@ const UserContextProvider = (props) => {
   }
 
   function closeDialog() {
+    setState(Object.assign({}, state, { showDialog: false }));
+  }
+
+  function openMultiFormDialog() {
+    setState(Object.assign({}, state, { showDialog: true, user: {} }));
+  }
+  function closeMultiFormDialog() {
     setState(Object.assign({}, state, { showDialog: false }));
   }
 
