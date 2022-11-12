@@ -23,7 +23,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   display: "flex",
-  width: "70%",
+  width: "90%",
   flexDirection: "column",
   justifyContent: "center",
   alignItems: "center",

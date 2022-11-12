@@ -38,7 +38,7 @@ const MultiForm = () => {
       flexDirection: "column",
       alignItems: "center",
       background: "#fff",
-      width: "60%",
+      width: "80%",
       height: "550px",
       borderRadius: "10px",
       position: "absolute",
@@ -48,7 +48,7 @@ const MultiForm = () => {
     },
 
     form: {
-      width: "80%",
+      width: "90%",
       marginTop: "40px",
       display: "flex",
       flexDirection: "column",
