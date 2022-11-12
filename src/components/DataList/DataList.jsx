@@ -17,25 +17,6 @@ import Pagination from "../Pagination";
 import MultiUser from "../MultiUser";
 import { toast, ToastContainer } from "react-toastify";
 
-const StyledTable = styled(Table)`
-  width: 100%;
-  margin: 50px 0 0 50px;
-`;
-
-const THead = styled(TableRow)`
-  & > th {
-    font-size: 20px;
-    background: #000000;
-    color: #ffffff;
-  }
-`;
-
-const TRow = styled(TableRow)`
-  & > td {
-    font-size: 18px;
-  }
-`;
-
 const DataList = () => {
   const context = useContext(UserContext);
   const userList = context.userList ? context.userList : [];
@@ -48,7 +29,6 @@ const DataList = () => {
   const handleClose = () => setOpenMultiUser(false);
   const handleOpenMultiForm = () => setOpenMultiForm(true);
   const [openMultiUser, setOpenMultiUser] = useState(false);
-  const handleCloseMultiForm = () => setOpenMultiForm(false);
   const currentEmployees = userList.slice(
     indexOfFirstEmployee,
     indexOfLastEmployee
@@ -58,7 +38,6 @@ const DataList = () => {
   };
 
   const totalPages = Math.ceil(userList.length / employeesPerPage);
-  console.log("userlist", context.userList);
   useEffect(() => {
     context.loadUserList();
   }, []);
@@ -154,11 +133,7 @@ const DataList = () => {
       {/* Multi Modal */}
 
       <Modal open={openMultiUser} onClose={handleClose}>
-        <MultiUser
-          handleOpenMultiForm={handleOpenMultiForm}
-          openMultiForm={openMultiForm}
-          handleCloseMultiForm={handleCloseMultiForm}
-        />
+        <MultiUser />
       </Modal>
 
       <Pagination totalPages={totalPages} setCurrentPage={setCurrentPage} />

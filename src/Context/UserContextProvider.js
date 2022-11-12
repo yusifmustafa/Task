@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { v4 } from "uuid";
 import Api from "../utils/Api";
 
 export const UserContext = React.createContext({});

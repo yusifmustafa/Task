@@ -22,7 +22,7 @@ import { toast, ToastContainer } from "react-toastify";
 import { useContext } from "react";
 import { UserContext } from "../Context/UserContextProvider";
 
-const MultiForm = ({ handleCloseMultiForm }) => {
+const MultiForm = () => {
   const notifyError = () => toast.error("Xəta! xanaları tam doldurun!");
   const notifyError2 = () =>
     toast.error("Bu adda və ya maildə istifadəçi mövcuddur");
@@ -69,8 +69,7 @@ const MultiForm = ({ handleCloseMultiForm }) => {
   const context = useContext(UserContext);
   let { handleOnChange, user, datas } = context;
 
-  console.log("datas", datas);
-
+ 
   function canBeAdded(user) {
     const data = context.userList.find((item) => {
       if (item.username === user.username || item.email === user.email) {
@@ -88,7 +87,6 @@ const MultiForm = ({ handleCloseMultiForm }) => {
   }
 
   const handleOnSubmit = () => {
-    console.log("datasss", datas);
     if (
       user === {} ||
       user.email === "" ||

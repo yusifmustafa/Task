@@ -51,11 +51,7 @@ const TRow = styled(TableRow)`
 
 const notifyAlert5 = () => toast.success("Data userListə əlavə olundu!");
 
-export default function MultiUserForm({
-  // handleOpenMultiForm,
-  handleCloseMultiForm,
-  openMultiForm,
-}) {
+export default function MultiUserForm() {
   const context = useContext(UserContext);
   const datas = context.datas;
   const sendDataToApi = () => {
@@ -134,7 +130,7 @@ export default function MultiUserForm({
 
       {/* MultiForm */}
       <Modal open={context.showDialog}>
-        <MultiForm handleCloseMultiForm={handleCloseMultiForm} />
+        <MultiForm />
       </Modal>
     </div>
   );
